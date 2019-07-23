@@ -182,3 +182,90 @@ Titulo: ${t},
 descripcion: ${descripcion},
 duracion: ${duracion}
 `);
+
+// Funciones constructoras y Prototype
+function Pelicula(titulo, descripcion, duracion, estreno) {
+  this.titulo = titulo;
+  this.descripcion = descripcion;
+  this.duracion = duracion;
+  this.estreno = estreno;
+  // this.estaEstrenada = function() {
+  //   return new Date().getFullYear() >= this.estreno;
+  // }
+}
+
+Pelicula.prototype.estaEstrenada = function() {
+  return new Date().getFullYear() >= this.estreno;
+}
+
+let peli100 = new Pelicula('Pelicula 100', 'Una descripcion', 100, 2000);
+let peli101 = new Pelicula('Pelicula 101', 'Otra descripcion', 101, 2020);
+
+console.log(peli100)
+console.log(peli100.estaEstrenada())
+console.log(peli101)
+console.log(peli101.estaEstrenada())
+
+// 'Penny...'.repeat(3) => Penny...Penny...Penny...
+
+String.prototype.repeat = function(num) {
+  // let res = this;
+  // for (let i = 0; i < num-1; i++) {
+  //   res += this;
+  // }
+  // return res;
+  return new Array(num+1).join(this);
+}
+
+let txt = 'Penny...'.repeat(6);
+console.log(txt);
+
+// Class (ES6)
+class Serie {
+  constructor(titulo, episodios, descripcion, episodiosVistos = 0) {
+    this.titulo = titulo;
+    this.episodios = episodios;
+    this.descripcion = descripcion;
+    this.episodiosVistos = episodiosVistos;
+  }
+
+  episodiosPorVer() {
+    return this.episodios - this.episodiosVistos;
+  }
+}
+
+let twd = new Serie('The Walking Dead', 200, 'Una serie', 190);
+let leftovers = new Serie('The Leftovers', 40, 'Una serie', 40);
+let got = new Serie('Game of Thrones', 140, 'Una serie', 40);
+let banshee = new Serie('Banshee', 240, 'Una serie', 240);
+
+const series = [twd, leftovers, got, banshee];
+
+function seriesVistas(misSeries) {
+  // ['The leftovers', 'Banshee']
+  let seriesVistas = misSeries.filter(serie => serie.episodiosPorVer() === 0);
+  let nombresSeriesVistas = seriesVistas.map(serie => serie.titulo);
+  return nombresSeriesVistas;
+}
+
+console.log(seriesVistas(series));
+
+
+console.log(twd.episodiosPorVer())
+
+// Map/Filter/Reduce
+const nums = [2, 4, 5, 5, 9, 10];
+
+const tripleNums = nums.map((n) => n * 3);
+console.log(tripleNums);
+
+const numsPares = tripleNums.filter(n => n % 2 === 0)
+console.log(numsPares);
+
+const sumaNumsPares = numsPares.reduce((acc, n) => {
+  return acc += n;
+}, 10);
+console.log(sumaNumsPares);
+
+// DOM
+// Ej Ingresos Gastos con DOM + AJAX
