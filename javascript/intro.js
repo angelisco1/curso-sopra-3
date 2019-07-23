@@ -266,6 +266,3 @@ const sumaNumsPares = numsPares.reduce((acc, n) => {
   return acc += n;
 }, 10);
 console.log(sumaNumsPares);
-
-// DOM
-// Ej Ingresos Gastos con DOM + AJAX
