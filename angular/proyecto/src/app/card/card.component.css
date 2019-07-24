@@ -1,0 +1,47 @@
+div.card {
+  width: 200px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 10px black;
+  /* padding: 15px; */
+  margin: 20px auto;
+}
+
+div.card h4, div.card p, div.card a, div.card button {
+  margin: 15px;
+}
+
+div.card h4 {
+  text-align: center;
+}
+
+div.card p {
+  text-align: justify;
+}
+
+button, a {
+  border: 1px solid darkgrey;
+  background-color: yellowgreen;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  width: 70px;
+  height: 30px;
+  margin: 15px;
+  /* padding: 7px; */
+}
+
+button:hover, a:hover {
+  color: yellowgreen;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+img {
+  width: 100px;
+}
+
+.con-flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid blue; */
+}
