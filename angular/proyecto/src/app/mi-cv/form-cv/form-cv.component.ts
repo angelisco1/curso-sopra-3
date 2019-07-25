@@ -1,5 +1,15 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
+interface MiEvento {
+  prop: string,
+  val: string
+}
+
+// const obj: MiEvento = {
+//   val: 2,
+//   prop: 'ss'
+// }
+
 @Component({
   selector: 'app-form-cv',
   templateUrl: './form-cv.component.html',
@@ -11,7 +21,7 @@ export class FormCvComponent implements OnInit {
   @Input() email: string;
   @Input() foto: string;
   @Input() skills: Array<string>;
-  @Output() propCvCambiada = new EventEmitter<any>();
+  @Output() propCvCambiada = new EventEmitter<MiEvento>();
   @Output() skillAdded = new EventEmitter<string>();
   constructor() { }
 
@@ -19,7 +29,7 @@ export class FormCvComponent implements OnInit {
   }
 
   cambiarPropCv(event) {
-    const miEvento = {
+    const miEvento: MiEvento = {
       prop: event.target.name,
       val: event.target.value
     }

@@ -1,0 +1,15 @@
+<h2>Pipes</h2>
+
+<div>
+  <h3>{{nombreProducto | titlecase}}</h3>
+  <!-- <h3>{{nombreProducto | uppercase}}</h3> -->
+  <!-- <h3>{{nombreProducto | lowercase}}</h3> -->
+  <p>{{descripcionProducto | slice:5:10}}</p>
+  <p>Precio: {{precio | doble:5:7 | currency:'EUR'}}</p>
+  <p>Comprado el {{fechaCompra | date:'dd/MM/yyyy'}}</p>
+
+
+  <p>{{nombreProducto | reverse}}</p>
+  <p>{{precio | currency:'EUR' | currencyRight}}</p>
+  <p>{{descripcionProducto | hideWords:['auriculares', 'nada']}}</p>
+</div>
