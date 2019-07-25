@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-preview-cv',
@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./preview-cv.component.css']
 })
 export class PreviewCvComponent implements OnInit {
+  @Input() nombre: string;
+  @Input() apellidos: string;
+  @Input() email: string;
+  @Input() foto: string;
+  @Input() skills: Array<string>;
 
   constructor() { }
 

@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiCvComponent implements OnInit {
 
+  nombre: string = '';
+  apellidos: string = '';
+  email: string = '';
+  foto: string = '';
+  skills: Array<string> = [];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  cambiarDatos(event) {
+    this[event.prop] = event.val;
+  }
+
+  addSkill(skill) {
+    this.skills.push(skill);
   }
 
 }

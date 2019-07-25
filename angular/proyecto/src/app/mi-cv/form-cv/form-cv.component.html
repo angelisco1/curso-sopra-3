@@ -1,1 +1,22 @@
-<p>form-cv works!</p>
+<h3>Rellena tus datos</h3>
+<div>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" [value]="nombre" (input)="cambiarPropCv($event)">
+</div>
+<div>
+  <label for="apellidos">Apellidos:</label>
+  <input type="text" id="apellidos" name="apellidos" [value]="apellidos" (input)="cambiarPropCv($event)">
+</div>
+<div>
+  <label for="foto">Foto:</label>
+  <input type="text" id="foto" name="foto" [value]="foto" (change)="cambiarPropCv($event)">
+</div>
+<div>
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email" [value]="email" (input)="cambiarPropCv($event)">
+</div>
+<div>
+  <label for="skill">Skill:</label>
+  <input type="text" id="skill" name="skill" #skill>
+  <button type="button" (click)="addSkill(skill)">Añadir</button>
+</div>

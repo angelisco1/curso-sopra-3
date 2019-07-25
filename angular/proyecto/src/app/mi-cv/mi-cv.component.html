@@ -1,1 +1,16 @@
-<p>mi-cv works!</p>
+<h2>CV interactivo</h2>
+<app-form-cv
+  [nombre]="nombre"
+  [apellidos]="apellidos"
+  [foto]="foto"
+  [email]="email"
+  [skills]="skills"
+  (propCvCambiada)="cambiarDatos($event)"
+  (skillAdded)="addSkill($event)"></app-form-cv>
+
+<app-preview-cv
+  [nombre]="nombre"
+  [apellidos]="apellidos"
+  [foto]="foto"
+  [email]="email"
+  [skills]="skills"></app-preview-cv>
