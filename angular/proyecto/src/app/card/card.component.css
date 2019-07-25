@@ -45,3 +45,10 @@ img {
   align-items: center;
   /* border: 1px solid blue; */
 }
+
+.circulo {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}

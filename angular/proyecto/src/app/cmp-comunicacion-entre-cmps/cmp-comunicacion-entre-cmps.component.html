@@ -1,0 +1,16 @@
+<h2>Comunicación entre componentes</h2>
+
+<p>Me llamo Anakin</p>
+<p>Mi hijo se llama {{nombreLuke}}</p>
+<p>Mi hija se llama {{nombreLeia}}</p>
+
+<hr>
+<app-cmp-leia
+  [miNombre]="nombreLeia"
+  [nombreHermano]="nombreLuke"
+  (nombreCambiado)="cambiarNombreLeia($event)"></app-cmp-leia>
+
+<hr>
+<app-cmp-luke
+  [miNombre]="nombreLuke"
+  [nombreHermana]="nombreLeia"></app-cmp-luke>
