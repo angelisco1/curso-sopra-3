@@ -13,8 +13,21 @@
 
 <p [ngClass]="{negrita: negrita, letraAmarilla: false}">Texto en negrita y amarillo</p>
 
+<p appMarcar="red" appBlink="blue">Párrafo marcado</p>
+<p appMarcar="blue">Párrafo marcado</p>
+<p appMarcar>Párrafo marcado</p>
+
 
 <h3>Estructurales</h3>
+
+<button type="button" (click)="toggleMostrarItem()">Cambiar mostrarItem</button>
+
+<p *ngIf="mostrarItem; else else2" appMarcar="red" appBlink="blue">Párrafo marcado</p>
+
+<ng-template #else2>
+  <p appMarcar>Párrafo marcado (ELSE)</p>
+</ng-template>
+
 <ul>
   <li *ngFor="let item of items">{{item}}</li>
 </ul>
