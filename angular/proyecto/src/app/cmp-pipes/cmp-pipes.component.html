@@ -13,3 +13,18 @@
   <p>{{precio | currency:'EUR' | currencyRight}}</p>
   <p>{{descripcionProducto | hideWords:['auriculares', 'nada']}}</p>
 </div>
+
+
+<input type="text" placeholder="Filtro" (input)="txtFiltro = $event.target.value">
+
+<input type="text" placeholder="Nueva mascota" #inputMascota>
+<button type="button" (click)="addMascota(inputMascota.value)">Añadir</button>
+<ul>
+  <li *ngFor="let mascota of mascotas">{{mascota}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let mascota of mascotas | filtro:txtFiltro">{{mascota}}</li>
+</ul>
+
+<p>Mensaje: {{msg | async}}</p>

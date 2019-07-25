@@ -1,0 +1,20 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+<p>Color: {{color}}</p>
+<input type="text" [(ngModel)]="color">
+
+<p [ngStyle]="{color: color, textDecoration: 'line-through'}">Texto azul y tachado</p>
+
+<label>
+  Letra negrita?
+  <input type="checkbox" (change)="negrita = !negrita">
+</label>
+
+<p [ngClass]="{negrita: negrita, letraAmarilla: false}">Texto en negrita y amarillo</p>
+
+
+<h3>Estructurales</h3>
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
