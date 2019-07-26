@@ -1,0 +1,23 @@
+- Componentes:
+  - Generador
+    - Meme
+    - Formulario
+  - Lista de los Memes
+    - Meme
+    - Meme
+    - Meme
+
+- 1 Servicio
+  memes: Meme = []
+  getMemes()
+  addMeme()
+  deleteMeme()
+
+- 1 Clase Meme
+  {
+    color: '',
+    textoArriba: '',
+    textoAbajo: '',
+    imagenUrl: '',
+    isFav: false
+  }

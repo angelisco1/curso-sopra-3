@@ -31,3 +31,9 @@
 <ul>
   <li *ngFor="let item of items">{{item}}</li>
 </ul>
+
+<div [ngSwitch]="color">
+  <p *ngSwitchCase="'black'">Es de color black</p>
+  <p *ngSwitchCase="'white'">Es de color white</p>
+  <p *ngSwitchDefault>Es de otro color</p>
+</div>
