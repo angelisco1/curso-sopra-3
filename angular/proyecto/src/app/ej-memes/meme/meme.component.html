@@ -1,0 +1,11 @@
+<div>
+  <div>
+    <p [ngStyle]="{color: meme.color}">{{meme.textoArriba}}</p>
+    <img [src]="meme.imagenUrl" alt="Imagen del meme">
+    <p [ngStyle]="{color: meme.color}">{{meme.textoAbajo}}</p>
+  </div>
+  <div *ngIf="!creando">
+    <button type="button" (click)="eliminar()">Eliminar</button>
+    <button type="button" (click)="toggleFav()">Fav {{meme.isFav ? '❤️' : '💔'}}</button>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div>
+  <div>
+    <label for="textoArriba">Texto Arriba:</label>
+    <input type="text" name="textoArriba" id="textoArriba" [(ngModel)]="meme.textoArriba">
+  </div>
+  <div>
+    <label for="textoAbajo">Texto Abajo:</label>
+    <input type="text" name="textoAbajo" id="textoAbajo" [(ngModel)]="meme.textoAbajo">
+  </div>
+  <div>
+    <label for="color">Color:</label>
+    <input type="color" name="color" id="color" [(ngModel)]="meme.color">
+  </div>
+  <div>
+    <label for="imagenUrl">URL Imagen:</label>
+    <input type="text" name="imagenUrl" id="imagenUrl" [(ngModel)]="meme.imagenUrl">
+  </div>
+  <button type="button" (click)="guardar()">Guardar</button>
+</div>
