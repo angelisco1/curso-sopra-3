@@ -21,7 +21,7 @@ export class MemeComponent implements OnInit {
   }
 
   toggleFav() {
-    // this.memesServ.favMeme(this.meme.id);
+    this.memesServ.favMeme(this.meme.id);
   }
 
 }

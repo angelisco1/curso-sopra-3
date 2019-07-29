@@ -17,7 +17,7 @@ export class MemesService {
     return this.memes;
   }
 
-  addMeme(textoArriba: string, textoAbajo: string, color: string, imagenUrl: string, isFav: boolean): void {
+  addMeme(textoArriba: string, textoAbajo: string, color: string, imagenUrl: string, isFav: boolean = false): void {
     const meme = new Meme(this.nextId, textoArriba, textoAbajo, imagenUrl, color, isFav);
     this.memes.push(meme);
     this.nextId += 1;
@@ -26,5 +26,10 @@ export class MemesService {
   deleteMeme(id: string): void {
     const pos = this.memes.findIndex(meme =>  meme.id === id)
     this.memes.splice(pos, 1);
+  }
+
+  favMeme(id: string) {
+    const meme = this.memes.find(meme => meme.id === id);
+    meme.isFav = !meme.isFav;
   }
 }
