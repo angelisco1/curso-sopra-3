@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Routing } from './cmp-routing/app.routes';
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -32,6 +33,13 @@ import { FormComponent } from './ej-memes/form/form.component';
 import { MemeComponent } from './ej-memes/meme/meme.component';
 import { ListaMemesComponent } from './ej-memes/lista-memes/lista-memes.component';
 import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
+import { CmpRoutingComponent } from './cmp-routing/cmp-routing.component';
+import { InicioComponent } from './cmp-routing/inicio/inicio.component';
+import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario.component';
+import { ErrorComponent } from './cmp-routing/error/error.component';
+import { UsuariosComponent } from './cmp-routing/usuarios/usuarios.component';
+import { InfoUsuarioComponent } from './cmp-routing/usuarios/info-usuario/info-usuario.component';
+import { EditarUsuarioComponent } from './cmp-routing/usuarios/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -64,12 +72,20 @@ import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.compo
     FormComponent,
     MemeComponent,
     ListaMemesComponent,
-    CmpFormulariosComponent
+    CmpFormulariosComponent,
+    CmpRoutingComponent,
+    InicioComponent,
+    NuevoUsuarioComponent,
+    ErrorComponent,
+    UsuariosComponent,
+    InfoUsuarioComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Routing
   ],
   providers: [],
   bootstrap: [AppComponent]

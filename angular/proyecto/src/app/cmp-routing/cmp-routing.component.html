@@ -1,0 +1,21 @@
+<nav>
+  <ul>
+    <li>
+      <a [routerLink]="['/']">Inicio</a>
+    </li>
+    <li>
+      <a [routerLink]="['/nuevo-usuario']">Nuevo usuario</a>
+    </li>
+    <li>
+      <a [routerLink]="['/usuarios']">Usuarios</a>
+    </li>
+  </ul>
+</nav>
+
+<p (click)="cuenta = cuenta + 1">Cuenta: {{cuenta}}</p>
+
+<a href="http://www.google.es" (click)="mostrar($event)">Google</a>
+
+<hr>
+
+<router-outlet></router-outlet>

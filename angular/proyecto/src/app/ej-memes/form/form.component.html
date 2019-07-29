@@ -1,19 +1,21 @@
-<div>
+<form [formGroup]="form" (submit)="guardar()">
   <div>
     <label for="textoArriba">Texto Arriba:</label>
-    <input type="text" name="textoArriba" id="textoArriba" [(ngModel)]="meme.textoArriba">
+    <input type="text" name="textoArriba" id="textoArriba" formControlName="textoArriba">
+    <p *ngIf="form.controls.textoArriba.invalid && form.controls.textoArriba.dirty">El texto de arriba es obligatorio</p>
   </div>
   <div>
     <label for="textoAbajo">Texto Abajo:</label>
-    <input type="text" name="textoAbajo" id="textoAbajo" [(ngModel)]="meme.textoAbajo">
+    <input type="text" name="textoAbajo" id="textoAbajo" formControlName="textoAbajo">
   </div>
   <div>
     <label for="color">Color:</label>
-    <input type="color" name="color" id="color" [(ngModel)]="meme.color">
+    <input type="color" name="color" id="color" formControlName="color">
   </div>
   <div>
     <label for="imagenUrl">URL Imagen:</label>
-    <input type="text" name="imagenUrl" id="imagenUrl" [(ngModel)]="meme.imagenUrl">
+    <input type="text" name="imagenUrl" id="imagenUrl" formControlName="imagenUrl">
+    <p *ngIf="form.controls.imagenUrl.invalid && form.controls.imagenUrl.dirty">La imagen es obligatoria</p>
   </div>
-  <button type="button" (click)="guardar()">Guardar</button>
-</div>
+  <button type="submit" [disabled]="form.invalid">Guardar</button>
+</form>
