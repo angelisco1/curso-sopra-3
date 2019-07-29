@@ -1,0 +1,11 @@
+.lista-memes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.meme-de-lista {
+  /* width: 40%; */
+  min-width: 300px;
+  max-width: 400px;
+}

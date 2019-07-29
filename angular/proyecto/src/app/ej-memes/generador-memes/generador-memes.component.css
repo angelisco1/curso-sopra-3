@@ -1,0 +1,14 @@
+.generador {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.meme-generador {
+  width: 45%;
+}
+
+.form-generador {
+  width: 45%;
+}

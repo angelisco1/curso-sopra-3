@@ -7,7 +7,7 @@ import { Meme } from '../meme';
   styleUrls: ['./generador-memes.component.css']
 })
 export class GeneradorMemesComponent implements OnInit {
-  meme: Meme = new Meme();
+  meme: Meme = new Meme('-1', 'Texto 1', 'Texto 2', 'https://i.imgflip.com/12dxv.jpg');
 
   constructor() { }
 

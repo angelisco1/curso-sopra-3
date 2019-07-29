@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -31,6 +31,7 @@ import { GeneradorMemesComponent } from './ej-memes/generador-memes/generador-me
 import { FormComponent } from './ej-memes/form/form.component';
 import { MemeComponent } from './ej-memes/meme/meme.component';
 import { ListaMemesComponent } from './ej-memes/lista-memes/lista-memes.component';
+import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
 
 @NgModule({
   declarations: [
@@ -62,11 +63,13 @@ import { ListaMemesComponent } from './ej-memes/lista-memes/lista-memes.componen
     GeneradorMemesComponent,
     FormComponent,
     MemeComponent,
-    ListaMemesComponent
+    ListaMemesComponent,
+    CmpFormulariosComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

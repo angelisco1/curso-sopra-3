@@ -1,8 +1,8 @@
 <div>
   <div>
-    <p [ngStyle]="{color: meme.color}">{{meme.textoArriba}}</p>
-    <img [src]="meme.imagenUrl" alt="Imagen del meme">
-    <p [ngStyle]="{color: meme.color}">{{meme.textoAbajo}}</p>
+    <p class="texto-meme texto-arriba" [ngStyle]="{color: meme.color}">{{meme.textoArriba}}</p>
+    <img class="imagen-meme" [src]="meme.imagenUrl" alt="Imagen del meme">
+    <p class="texto-meme texto-abajo" [ngStyle]="{color: meme.color}">{{meme.textoAbajo}}</p>
   </div>
   <div *ngIf="!creando">
     <button type="button" (click)="eliminar()">Eliminar</button>

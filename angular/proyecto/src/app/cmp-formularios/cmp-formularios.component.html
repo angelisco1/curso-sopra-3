@@ -1,0 +1,15 @@
+<h2>Formulario</h2>
+
+<form [formGroup]="form" (submit)="login()">
+  <div>
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" formControlName="username">
+    <p *ngIf="form.controls.username.invalid && form.controls.username.dirty">El campo es invalido</p>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password">
+    <p *ngIf="form.controls.password.invalid && form.controls.password.dirty">El campo es invalido</p>
+  </div>
+  <button type="submit" [disabled]="form.invalid">Login</button>
+</form>
