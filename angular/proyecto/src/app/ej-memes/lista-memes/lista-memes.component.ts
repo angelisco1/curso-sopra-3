@@ -9,6 +9,7 @@ import { MemesService } from '../memes.service';
 })
 export class ListaMemesComponent implements OnInit {
   memes: Array<Meme> = [];
+  mostrarFavoritos: boolean = false;
 
   constructor(private memesServ: MemesService) { }
 
@@ -20,9 +21,15 @@ export class ListaMemesComponent implements OnInit {
     this.pintaOtraVez();
   }
 
+  muestraFavs() {
+    this.mostrarFavoritos = !this.mostrarFavoritos;
+    this.pintaOtraVez();
+  }
+
   pintaOtraVez() {
-    this.memesServ.getMemes().subscribe((memes) => {
-      this.memes = memes;
+    this.memesServ.getMemes()
+    .subscribe((memes) => {
+      this.memes = this.mostrarFavoritos ? memes.filter(meme => meme.isFav) : memes;
     })
   }
 
