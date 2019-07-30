@@ -2,6 +2,7 @@ import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { Meme } from '../meme';
 import { MemesService } from '../memes.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -12,7 +13,7 @@ export class FormComponent implements OnInit, DoCheck {
   form: FormGroup;
   @Input() meme: Meme;
 
-  constructor(private memesServ: MemesService, private formBuilder: FormBuilder) { }
+  constructor(private memesServ: MemesService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -32,6 +33,8 @@ export class FormComponent implements OnInit, DoCheck {
 
   guardar() {
     this.memesServ.addMeme(this.form.value.textoArriba, this.form.value.textoAbajo, this.form.value.color, this.form.value.imagenUrl);
+
+    this.router.navigate(['/memes']);
   }
 
 }

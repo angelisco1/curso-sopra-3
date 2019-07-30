@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Routing } from './cmp-routing/app.routes';
+// import { Routing } from './cmp-routing/app.routes';
+import { Routing } from './ej-memes/memes.routes';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -40,6 +42,10 @@ import { ErrorComponent } from './cmp-routing/error/error.component';
 import { UsuariosComponent } from './cmp-routing/usuarios/usuarios.component';
 import { InfoUsuarioComponent } from './cmp-routing/usuarios/info-usuario/info-usuario.component';
 import { EditarUsuarioComponent } from './cmp-routing/usuarios/editar-usuario/editar-usuario.component';
+import { CmpHttpComponent } from './cmp-http/cmp-http.component';
+import { ObservablesComponent } from './cmp-http/observables/observables.component';
+import { CardJobComponent } from './cmp-http/card-job/card-job.component';
+import { JobListComponent } from './cmp-http/job-list/job-list.component';
 
 @NgModule({
   declarations: [
@@ -79,13 +85,18 @@ import { EditarUsuarioComponent } from './cmp-routing/usuarios/editar-usuario/ed
     ErrorComponent,
     UsuariosComponent,
     InfoUsuarioComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    CmpHttpComponent,
+    ObservablesComponent,
+    CardJobComponent,
+    JobListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    Routing
+    Routing,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
