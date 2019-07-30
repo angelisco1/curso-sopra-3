@@ -13,7 +13,17 @@ export class ListaMemesComponent implements OnInit {
   constructor(private memesServ: MemesService) { }
 
   ngOnInit() {
-    this.memes = this.memesServ.getMemes();
+    // this.memes = this.memesServ.getMemes();
+    this.memesServ.pintamos.subscribe(() => {
+      this.pintaOtraVez();
+    })
+    this.pintaOtraVez();
+  }
+
+  pintaOtraVez() {
+    this.memesServ.getMemes().subscribe((memes) => {
+      this.memes = memes;
+    })
   }
 
 }

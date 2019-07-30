@@ -17,11 +17,17 @@ export class MemeComponent implements OnInit {
   }
 
   eliminar() {
-    this.memesServ.deleteMeme(this.meme.id);
-  }
+    this.memesServ.deleteMeme(this.meme.id)
+      .subscribe(() => {
+        this.memesServ.pintamos.emit(true);
+      });
+    }
 
-  toggleFav() {
-    this.memesServ.favMeme(this.meme.id);
+    toggleFav() {
+      this.memesServ.favMeme(this.meme)
+      .subscribe(() => {
+        this.memesServ.pintamos.emit(true);
+      });
   }
 
 }

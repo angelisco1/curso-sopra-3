@@ -32,9 +32,10 @@ export class FormComponent implements OnInit, DoCheck {
   }
 
   guardar() {
-    this.memesServ.addMeme(this.form.value.textoArriba, this.form.value.textoAbajo, this.form.value.color, this.form.value.imagenUrl);
-
-    this.router.navigate(['/memes']);
+    this.memesServ.addMeme(this.form.value.textoArriba, this.form.value.textoAbajo, this.form.value.color, this.form.value.imagenUrl)
+      .subscribe(() => {
+        this.router.navigate(['/memes']);
+      });
   }
 
 }
